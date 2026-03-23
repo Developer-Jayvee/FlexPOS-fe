@@ -1,0 +1,23 @@
+nav , ul{
+    padding:0 !important;
+}
+
+.nav-list li a.active{
+    background-color:#2563EB ;
+    color:#E5E7EB;
+    font-weight: 700;
+}
+.nav-list li a {
+    padding:10px 0;
+    display: block !important;
+}
+.nav-list li a:hover{
+    background-color: #1D4ED8;
+    color:#E5E7EB;
+}
+.nav-list li a > span{
+    font-size: 15px;
+    vertical-align: middle;
+    padding:0 5px;
+    display: inline-block !important;
+}
