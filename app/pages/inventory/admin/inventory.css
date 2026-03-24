@@ -2,8 +2,13 @@
     position: relative;
     overflow: auto;
 }
-.input-search:focus{
-    border:none;
-    outline: none;
-    border-bottom: 2px solid black;
+.search-filter > input{
+    background-color: transparent !important;
+    border:none !important;
+    border-bottom: 1px solid black !important;
+}
+.search-filter > input:focus{
+    border:none !important;
+    outline: none !important;
+    border-bottom: 2px solid black !important;
 }
