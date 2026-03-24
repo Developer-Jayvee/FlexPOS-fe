@@ -1,9 +1,10 @@
 import { PREFIX_INVENTORY } from "constants/endpoints";
 import axiosClient from "services/axiosClient"
 import type { 
-    INVETORYTYPES,
-    ItemIDType,
-    UpdateInvetoryType
+    InvetoryDetailTypes,
+     INVETORYTYPES,
+     ItemIDType,
+     UpdateInvetoryType
 } from "types/inventory";
 
 
@@ -13,7 +14,7 @@ export const inventoryApi = {
         return await axiosClient.get(PREFIX_INVENTORY);
     },
     async getItemDetails(id : ItemIDType ){
-        return await axiosClient.get(PREFIX_INVENTORY + `/${id}`);
+        return await axiosClient.get<InvetoryDetailTypes>(PREFIX_INVENTORY + `/${id}`);
     },
     async deleteExistingItem(id : ItemIDType){
         return await axiosClient.delete(PREFIX_INVENTORY + `/${id}`);
@@ -26,6 +27,9 @@ export const inventoryApi = {
         return response;
     },
     async createNewItem({ formData  } : INVETORYTYPES){
+        if(!formData){
+            return console.warn('Missing payload');
+        }
         const response =  await axiosClient.post(PREFIX_INVENTORY,formData);
         if(!response){
             return alert(response)

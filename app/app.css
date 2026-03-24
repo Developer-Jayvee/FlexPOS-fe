@@ -2,6 +2,10 @@
 :root{
     --primary-btn:#2563EB;
     --btn-text:#DBEAFE;
+    --semantic-success:#16A34A;
+    --semantic-warning:#F59E0B;
+    --semantic-error:#DC2626;
+    --semantic-info:#0EA5E9;
 }
 body{
     padding:0 !important;
@@ -19,7 +23,12 @@ textarea,
 .side-modal
 {
     background-color: #FFFFFF;
-    border:1px solid #E5E7EB !important;
+    border:2px solid #E5E7EB !important;
+}
+select:focus,
+input:focus,
+textarea:focus{
+    outline:none !important; 
 }
 .image-container{
     padding:5px;
@@ -43,13 +52,26 @@ textarea{
     padding:5px;
 }
 button{
-    background-color: var(--primary-btn);
     color: var(--btn-text);
     width:100%;
     border-radius:5px;
     padding:5px 0 ;
     font-weight: 500;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    cursor: pointer;
+}
+button.btn-primary{
+    background-color: var(--primary-btn);
+}
+button.btn-success{
+    background-color: var(--semantic-success);
+}
+button.btn-error{
+    background-color: var(--semantic-error);
 }
 .input-field{
     display:flex;
@@ -58,6 +80,11 @@ button{
 .input-field > label{
     font-size:clamp(10px,20vw,20px);
     font-weight: bold;
+}
+.input-group-field{
+    display:grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap:10px;
 }
 .card-list > div ,
 .card-list > div img

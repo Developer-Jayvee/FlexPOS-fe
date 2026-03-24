@@ -1,12 +1,11 @@
-import axios from 'axios';
-export const setupInterceptors = (axiosInstance) => {
+export const setupInterceptors = (axiosInstance ) => {
     axiosInstance.interceptors.request.use(
         (config) => {
             const token = localStorage.getItem('user-token');
             if(token){
                 config.headers.Authorization = `Bearer ${token}`;
             }
-            return token
+            return config
         },
         (error) => Promise.reject(error)
     );

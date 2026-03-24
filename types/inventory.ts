@@ -1,6 +1,7 @@
 
 export type ItemIDType = number;
 export type InvetoryDetailTypes = {
+    id?:number;
     name:string;
     stocks:number;
     price:number;
