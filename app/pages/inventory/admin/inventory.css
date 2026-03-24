@@ -1,0 +1,9 @@
+.input-search{
+    position: relative;
+    overflow: auto;
+}
+.input-search:focus{
+    border:none;
+    outline: none;
+    border-bottom: 2px solid black;
+}

@@ -1,0 +1,28 @@
+.side-modal{
+    position: fixed;
+    right:0;
+    top:0;
+    bottom: 0;
+    width:0;
+    opacity: 0;
+    padding:15px;
+    box-shadow: 0  0 2px rgba(0, 0, 0, .2);
+    transition: width 400ms ease-in-out , opacity 400ms ease-in-out;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 30px 160px 1fr 50px ;
+}
+.side-modal > div{
+    margin:10px 0;
+}
+.side-modal.visible{
+    width: 350px;
+    opacity: 1;
+}
+.close_btn{
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+}
+.close_btn:hover{
+    transform: scale(1.1);
+}
