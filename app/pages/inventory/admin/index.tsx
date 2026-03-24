@@ -1,4 +1,4 @@
-import { Search } from "iconoir-react"
+import { Search , Plus } from "iconoir-react"
 import "./inventory.css"
 import CardComponent from "components/feature/card"
 import TestProduct from "../../../../public/images/sample-product.png";
@@ -12,15 +12,20 @@ export default function InventoryPage() {
     const openModal = () => setModalOpen(!isModalOpen);
     return (
         <div className="grid grid-cols-1 grid-rows-[50px_1fr] ">
-            <div className="filters flex justify-between ">
+            <div className="filters grid grid-cols-2 ">
                 <div className="search-filter flex items-center gap-2">
                     <Search />
                     <input type="text" placeholder="Search product here..." className="border-b input-search" />
                 </div>
-                <div className="dropdown-filters self-center">
+                <div className="right-filters grid grid-cols-[1fr_90px] gap-4">
                     <select>
                         <option value="">Choose a category</option>
                     </select>
+                    <button>
+                        <Plus/>
+                        <span> New </span>
+                    </button>
+
                 </div>
             </div>
             <div className="container-fluid  p-2  ">
