@@ -49,12 +49,18 @@ const InventoryPage = () => {
         })
         )
     }
+    const submitFormData = async () => {
+        if(currentItemID){
+            return await inventoryApi.updateInventoryItem({ formData:formData , id:currentItemID});
+        }
+        return await inventoryApi.createNewItem({ formData: formData });
+    }
     const handleSubmit = async () => {
         const action = confirm("Click ok to continue");
         if(!action){
             return false;
         }
-        const response = await inventoryApi.createNewItem({ formData: formData });
+        const response = await submitFormData();
         if (!response) {
             return alert('Failed to add inventory');
         }
